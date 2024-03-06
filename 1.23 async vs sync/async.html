@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>title </title>
+<!-- <script src="async.js"></script> -->
+</head>
+
+<body>
+
+    <h2>HTML Forms</h2>
+
+        <form id="theForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="Lingxi"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Chen"><br><br>
+        <input type="submit" value="Submit" >
+        </form> 
+        <div id="clickableDiv">Submit</div>
+        <div id="jsonOutput"> </div>
+
+
+</body>
+
+    <script>
+    document.getElementById('clickableDiv').addEventListener('click', function() {
+        let formData = new FormData(document.getElementById("myForm"));
+        let requestData = Object.fromEntries(formData);
+
+        document.getElementById("jsonOutput").innerHTML = JSON.stringify(requestData);
+        });
+       
+
+        
+
+</script>
+
+
+</html>
